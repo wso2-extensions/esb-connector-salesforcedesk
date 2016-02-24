@@ -22,7 +22,7 @@ Steps to follow in setting integration test.
       https://reg.desk.com/users/new
       
  3. If required add the X.509 certificate from https://{DOMAIN_NAME}.desk.com  to the client-truststore.jks of the ESB located in "<ESB_HOME>/repository/resources/security" directory
-    and wso2carbon.jks located in "<SALESFORCEDESK_CONNECTOR_HOME>/salesforcedesk-connector/salesforcedesk-connector-1.0.0/org.wso2.carbon.connector/src/test/resources/keystores/products".
+    and wso2carbon.jks located in "<SALESFORCEDESK_CONNECTOR_HOME>/src/test/resources/keystores/products".
       
  4. Prerequisites for SalesforceDesk Connector Integration Testing.
       i) Create a new custom field as 'employer_id' for companies by navigating to the following link.
@@ -42,7 +42,7 @@ Steps to follow in setting integration test.
 
  5. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "<SALESFORCEDESK_CONNECTOR_HOME>/repository/".
 
- 6. Update the SalesforceDesk properties file at location "<SALESFORCEDESK_CONNECTOR_HOME>/salesforcedesk-connector/salesforcedesk-connector-1.0.0/org.wso2.carbon.connector/src/test/resources/artifacts/ESB/connector/config" as below.
+ 6. Update the SalesforceDesk properties file at location "<SALESFORCEDESK_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
 
    i)      apiUrl                   -  Use the following value, https://{DOMAIN_NAME}.desk.com
    ii)     password                 -  The password of the account.
