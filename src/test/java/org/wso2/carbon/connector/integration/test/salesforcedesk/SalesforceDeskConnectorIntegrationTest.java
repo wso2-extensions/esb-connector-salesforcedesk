@@ -17,10 +17,6 @@
  */
 package org.wso2.carbon.connector.integration.test.salesforcedesk;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +26,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase;
 import org.wso2.connector.integration.test.base.RestResponse;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SalesforceDeskConnectorIntegrationTest extends ConnectorIntegrationTestBase {
     
@@ -367,11 +367,11 @@ public class SalesforceDeskConnectorIntegrationTest extends ConnectorIntegration
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         
         final String caseId = connectorProperties.getProperty("caseIdMand");
-        final String apiEndPoint = apiUrl + "/cases/" + caseId + "/notes?sort_direction=page=1&per_page=3";
+        final String apiEndPoint = apiUrl + "/cases/" + caseId + "/notes?page=1&per_page=3";
         
         final RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
         final int resultsCount = esbRestResponse.getBody().getJSONObject("_embedded").getJSONArray("entries").length();
-        
+
         Assert.assertEquals(esbRestResponse.getBody().getString("total_entries"), apiRestResponse.getBody().getString(
                 "total_entries"));
         Assert.assertEquals(esbRestResponse.getBody().getString("page"), apiRestResponse.getBody().getString("page"));
@@ -388,7 +388,6 @@ public class SalesforceDeskConnectorIntegrationTest extends ConnectorIntegration
             Assert.assertEquals(esbRestResponse.getBody().getJSONObject("_embedded").getJSONArray("entries")
                     .getJSONObject(resultsCount - 1).getString("body"), apiRestResponse.getBody().getJSONObject(
                     "_embedded").getJSONArray("entries").getJSONObject(resultsCount - 1).getString("body"));
-            
         }
     }
     
