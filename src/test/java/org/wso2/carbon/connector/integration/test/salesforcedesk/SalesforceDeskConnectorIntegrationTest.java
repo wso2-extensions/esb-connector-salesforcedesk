@@ -45,7 +45,7 @@ public class SalesforceDeskConnectorIntegrationTest extends ConnectorIntegration
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
         
-        init("salesforcedesk-connector-1.0.1");
+        init("salesforcedesk-connector-1.0.2-SNAPSHOT");
         
         String authorizationString =
                 connectorProperties.getProperty("email") + ":" + connectorProperties.getProperty("password");
