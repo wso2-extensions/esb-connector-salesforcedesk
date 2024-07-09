@@ -1,0 +1,21 @@
+{
+    "name": "SalesforceDesk",
+    "owner": "WSO2",
+    "category": "Customer Relationship Management",
+    "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/Salesforce+Desk+Connector",
+    "description": "The Salesforce Desk connector allows you to access the Salesforce Desk REST API through WSO2 ESB. Salesforce Desk is a customer service application which helps small businesses offer exceptional, multi-channel customer service.",
+    "status": "Unsupported",
+    "labels": [
+        "connector"
+    ],
+    "releases": [
+        {
+            "tagName": "v1.0.1",
+            "products": [
+                "ESB 5.0.0",
+                "ESB 4.9.0"
+            ],
+            "isHidden": false
+        }
+    ]
+}
